@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quick Cool Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+header {
+    background: #ff6b00;
+    color: white;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1 { margin: 0; }
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 500;
+}
+.hero {
+    background: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952') no-repeat center/cover;
+    height: 90vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.hero h2 { font-size: 50px; }
+.hero button {
+    padding: 12px 25px;
+    background: #ff6b00;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+.section {
+    padding: 50px;
+    text-align: center;
+}
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.card {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.contact {
+    background: #f4f4f4;
+}
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Quick Cool Services</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>All Types of Repair & Service</h2>
+    <p>AC | Fridge | Washing Machine | Cooler</p>
+    <button onclick="scrollToContact()">Book Now</button>
+</section>
+
+<section class="section" id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="card">AC Installation & Repair</div>
+        <div class="card">Fridge Repair & Service</div>
+        <div class="card">Washing Machine Repair</div>
+        <div class="card">Cooler Repair</div>
+        <div class="card">Water Cooler Repair</div>
+        <div class="card">Gas Filling & Maintenance</div>
+    </div>
+</section>
+
+<section class="section contact" id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Owner:</strong> Sayyed Sohrab</p>
+    <p><strong>Contact Number:</strong> 7050557196</p>
+    <p><strong>Address:</strong> Domjur Bankra, Howrah, West Bengal</p>
+    <form>
+        <input type="text" placeholder="Your Name" required><br><br>
+        <input type="email" placeholder="Your Email" required><br><br>
+        <textarea placeholder="Your Message" required></textarea><br><br>
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 Quick Cool Services | All Rights Reserved</p>
+</footer>
+
+<script>
+function scrollToContact() {
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
