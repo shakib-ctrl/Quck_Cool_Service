@@ -103,18 +103,14 @@ footer {
     <p><strong>Owner:</strong> Sayyed Sohrab</p>
     <p><strong>Contact Number:</strong> 7050557196</p>
     <p><strong>Address:</strong> Domjur Bankra, Howrah, West Bengal</p>
-    <form>
-        <input type="text" placeholder="Your Name" required><br><br>
-        <input type="email" placeholder="Your Email" required><br><br>
-        <textarea placeholder="Your Message" required></textarea><br><br>
-        <button type="submit">Send</button>
+    <form onsubmit="sendToWhatsApp(event)">
+        <input type="text" id="name" placeholder="Your Name" required><br><br>
+        <input type="email" id="email" placeholder="Your Email" required><br><br>
+        <textarea id="message" placeholder="Your Message" required></textarea><br><br>
+        <button type="submit">Send via WhatsApp</button>
     </form>
 </section>
-<a href="https://wa.me/917050557196" target="_blank" 
-style="position:fixed; bottom:20px; right:20px; background:#25D366; color:white; 
-padding:15px; border-radius:50%; font-size:20px; text-decoration:none;">
-💬
-</a>
+
 <footer>
     <p>© 2026 Quick Cool Services | All Rights Reserved</p>
 </footer>
@@ -123,6 +119,23 @@ padding:15px; border-radius:50%; font-size:20px; text-decoration:none;">
 function scrollToContact() {
     document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
 }
+function sendToWhatsApp(event) {
+    event.preventDefault();
+
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var message = document.getElementById('message').value;
+
+    var phone = "917050557196";
+
+    var url = "https://wa.me/" + phone + "?text=" 
+        + encodeURIComponent("Hello, my name is " + name + "
+Email: " + email + "
+Message: " + message);
+
+    window.open(url, '_blank');
+}
+
 </script>
 
 </body>
